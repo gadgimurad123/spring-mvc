@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style>
+        table {
+            border: 1px;
+            width: 300px;
+            background: #ee8f8f;
+            color: #ffffff;
+            border-spacing: 1px;
+        }
+        td, th {
+            background: #b02b2b;
+            padding: 5px;
+        }
+        td {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Cars table</h2>
+<table>
+    <tr>
+        <th>Model</th>
+        <th>Series</th>
+        <th>Year</th>
+    </tr>
+
+    <th:block th:each="car : ${cars}">
+        <tr>
+            <td><p th:text="${car.model}"></p></td><td><p th:text="${car.series}"></p></td><td><p th:text="${car.year}"></p></td>
+        </tr>
+    </th:block>
+</table>
+
+</body>
+</html>
