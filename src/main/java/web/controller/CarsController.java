@@ -14,7 +14,7 @@ import java.util.List;
 public class CarsController {
 
     @Autowired
-    CarsService carsService;
+    private CarsService carsService;
 
     @GetMapping("/cars")
     public String carsPage(Model model, @RequestParam(defaultValue = "5") int param) {

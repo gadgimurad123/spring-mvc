@@ -8,8 +8,7 @@ import java.util.List;
 
 @Component
 public class CarsServiceImpl implements CarsService {
-    List<Car> carsList = new ArrayList<>();
-    List<Car> carsSubList = new ArrayList<>();
+    private final List<Car> carsList = new ArrayList<>();
 
     {
         carsList.add(new Car("Car1", "123", 2001));
@@ -26,8 +25,6 @@ public class CarsServiceImpl implements CarsService {
 
     @Override
     public List<Car> getSubListOfCars(int carsCount) {
-
-        carsSubList.addAll(carsList.subList(0, carsCount));
-        return carsSubList;
+        return new ArrayList<>(carsList.subList(0, carsCount));
     }
 }
